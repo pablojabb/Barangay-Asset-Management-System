@@ -19,14 +19,25 @@ namespace AssetManagementSystem
         {
             InitializeComponent();
 
+            
             materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Grey900,
                 Primary.Grey800,
-                Primary.Grey700,
+                Primary.Grey100,
                 Accent.Green400,
-                TextShade.WHITE);
+                TextShade.WHITE);   
+
+            //materialSkinManager.ColorScheme = new ColorScheme(
+            //    Primary.Green700,
+            //    Primary.Green900,
+            //    Primary.Green500,
+            //    Accent.Green400,
+            //    TextShade.WHITE);
+
+
 
             LoadThemeFromDatabase(); // ✅ Load saved theme before loading forms
 

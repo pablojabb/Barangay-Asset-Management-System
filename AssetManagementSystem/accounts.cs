@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,6 @@ namespace AssetManagementSystem
         public accounts()
         {
             InitializeComponent();
-
             loadData();
 
 
@@ -185,17 +185,41 @@ namespace AssetManagementSystem
         }
 
 
-        public bool CheckField(MaterialTextBox2 txt)
+        public bool CheckField(Control ctrl)
         {
             this.ActiveControl = null;
-            if (string.IsNullOrWhiteSpace(txt.Text))
+
+            string value = string.Empty;
+            string label = string.Empty;
+
+            if (ctrl is MaterialTextBox2 txt)
             {
-                MessageBox.Show($"{txt.Hint} field cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt.Focus();
+                value = txt.Text?.Trim();
+                label = txt.Hint;
+            }
+            else if (ctrl is MaterialComboBox cmb)
+            {
+                value = cmb.Text?.Trim();
+                label = cmb.Hint;
+            }
+            else
+            {
+                // Unsupported control type
+                return true;
+            }
+
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                MessageBox.Show($"{label} field cannot be empty.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                ctrl.Focus();
                 return false;
             }
+
             return true;
         }
+
 
         public void clearFeilds()
         {

@@ -86,7 +86,7 @@
             this.clearBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.clearBtn.Size = new System.Drawing.Size(182, 60);
             this.clearBtn.TabIndex = 10;
-            this.clearBtn.Text = "Clear feilds";
+            this.clearBtn.Text = "Clear fields";
             this.clearBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.clearBtn.UseAccentColor = false;
             this.clearBtn.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@
             this.idFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.idFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.idFeild.Depth = 0;
-            this.idFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.idFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idFeild.HideSelection = true;
             this.idFeild.Hint = "ID";
             this.idFeild.LeadingIcon = null;
@@ -311,12 +311,12 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(158, 32);
+            this.materialLabel1.Location = new System.Drawing.Point(145, 4);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(98, 29);
+            this.materialLabel1.Size = new System.Drawing.Size(110, 29);
             this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "User Info";
+            this.materialLabel1.Text = "Asset Info";
             // 
             // materialListView1
             // 

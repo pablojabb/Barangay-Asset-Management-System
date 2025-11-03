@@ -28,58 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.assetListView = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.conditionComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.statusComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.categoryComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.clearBtn = new MaterialSkin.Controls.MaterialButton();
             this.deleteBtn = new MaterialSkin.Controls.MaterialButton();
             this.editBtn = new MaterialSkin.Controls.MaterialButton();
             this.addBtn = new MaterialSkin.Controls.MaterialButton();
-            this.roleFeild = new MaterialSkin.Controls.MaterialTextBox2();
-            this.passwordFeild = new MaterialSkin.Controls.MaterialTextBox2();
-            this.usernameFeild = new MaterialSkin.Controls.MaterialTextBox2();
+            this.locationFeild = new MaterialSkin.Controls.MaterialTextBox2();
             this.nameFeild = new MaterialSkin.Controls.MaterialTextBox2();
             this.idFeild = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialListView1
+            // assetListView
             // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.assetListView.AutoSizeTable = false;
+            this.assetListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.assetListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.assetListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
-            this.materialListView1.Depth = 0;
-            this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(37, 0);
-            this.materialListView1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(830, 683);
-            this.materialListView1.TabIndex = 2;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.columnHeader5,
+            this.columnHeader6});
+            this.assetListView.Depth = 0;
+            this.assetListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assetListView.FullRowSelect = true;
+            this.assetListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.assetListView.HideSelection = false;
+            this.assetListView.Location = new System.Drawing.Point(37, 0);
+            this.assetListView.Margin = new System.Windows.Forms.Padding(0);
+            this.assetListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.assetListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.assetListView.MouseState = MaterialSkin.MouseState.OUT;
+            this.assetListView.Name = "assetListView";
+            this.assetListView.OwnerDraw = true;
+            this.assetListView.Size = new System.Drawing.Size(830, 683);
+            this.assetListView.TabIndex = 2;
+            this.assetListView.UseCompatibleStateImageBehavior = false;
+            this.assetListView.View = System.Windows.Forms.View.Details;
+            this.assetListView.SelectedIndexChanged += new System.EventHandler(this.assetListView_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 50;
+            this.columnHeader1.Width = 70;
             // 
             // columnHeader2
             // 
@@ -88,32 +96,42 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Username";
+            this.columnHeader3.Text = "Location";
             this.columnHeader3.Width = 150;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = " Password";
-            this.columnHeader4.Width = 200;
+            this.columnHeader4.Text = "Category";
+            this.columnHeader4.Width = 150;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = " Role";
-            this.columnHeader5.Width = 150;
+            this.columnHeader5.Text = "Status";
+            this.columnHeader5.Width = 170;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Condition";
+            this.columnHeader6.Width = 140;
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialLabel1);
+            this.materialCard1.Controls.Add(this.materialButton4);
+            this.materialCard1.Controls.Add(this.conditionComboBox);
+            this.materialCard1.Controls.Add(this.materialButton3);
+            this.materialCard1.Controls.Add(this.statusComboBox);
+            this.materialCard1.Controls.Add(this.materialButton2);
+            this.materialCard1.Controls.Add(this.categoryComboBox);
+            this.materialCard1.Controls.Add(this.materialButton1);
             this.materialCard1.Controls.Add(this.clearBtn);
             this.materialCard1.Controls.Add(this.deleteBtn);
             this.materialCard1.Controls.Add(this.editBtn);
             this.materialCard1.Controls.Add(this.addBtn);
-            this.materialCard1.Controls.Add(this.roleFeild);
-            this.materialCard1.Controls.Add(this.passwordFeild);
-            this.materialCard1.Controls.Add(this.usernameFeild);
+            this.materialCard1.Controls.Add(this.locationFeild);
             this.materialCard1.Controls.Add(this.nameFeild);
             this.materialCard1.Controls.Add(this.idFeild);
-            this.materialCard1.Controls.Add(this.materialLabel1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(881, 0);
@@ -124,6 +142,180 @@
             this.materialCard1.Size = new System.Drawing.Size(380, 687);
             this.materialCard1.TabIndex = 3;
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.materialLabel1.Location = new System.Drawing.Point(110, 30);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(161, 24);
+            this.materialLabel1.TabIndex = 18;
+            this.materialLabel1.Text = "Asset Infotmation";
+            // 
+            // materialButton4
+            // 
+            this.materialButton4.AutoSize = false;
+            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton4.Depth = 0;
+            this.materialButton4.HighEmphasis = false;
+            this.materialButton4.Icon = null;
+            this.materialButton4.Location = new System.Drawing.Point(29, 464);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton4.Name = "materialButton4";
+            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton4.Size = new System.Drawing.Size(321, 49);
+            this.materialButton4.TabIndex = 17;
+            this.materialButton4.Text = "View Image";
+            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton4.UseAccentColor = false;
+            this.materialButton4.UseVisualStyleBackColor = true;
+            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
+            // 
+            // conditionComboBox
+            // 
+            this.conditionComboBox.AutoResize = false;
+            this.conditionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.conditionComboBox.Depth = 0;
+            this.conditionComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.conditionComboBox.DropDownHeight = 174;
+            this.conditionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.conditionComboBox.DropDownWidth = 121;
+            this.conditionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.conditionComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.conditionComboBox.FormattingEnabled = true;
+            this.conditionComboBox.Hint = "Condition";
+            this.conditionComboBox.IntegralHeight = false;
+            this.conditionComboBox.ItemHeight = 43;
+            this.conditionComboBox.Location = new System.Drawing.Point(27, 406);
+            this.conditionComboBox.MaxDropDownItems = 4;
+            this.conditionComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.conditionComboBox.Name = "conditionComboBox";
+            this.conditionComboBox.Size = new System.Drawing.Size(273, 49);
+            this.conditionComboBox.StartIndex = 0;
+            this.conditionComboBox.TabIndex = 16;
+            this.conditionComboBox.UseAccent = false;
+            this.conditionComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox3_SelectedIndexChanged);
+            // 
+            // materialButton3
+            // 
+            this.materialButton3.AutoSize = false;
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = false;
+            this.materialButton3.Icon = null;
+            this.materialButton3.Location = new System.Drawing.Point(303, 406);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(47, 49);
+            this.materialButton3.TabIndex = 15;
+            this.materialButton3.Text = "add";
+            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
+            // 
+            // statusComboBox
+            // 
+            this.statusComboBox.AutoResize = false;
+            this.statusComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.statusComboBox.Depth = 0;
+            this.statusComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.statusComboBox.DropDownHeight = 174;
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.DropDownWidth = 121;
+            this.statusComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.statusComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Hint = "Status";
+            this.statusComboBox.IntegralHeight = false;
+            this.statusComboBox.ItemHeight = 43;
+            this.statusComboBox.Location = new System.Drawing.Point(28, 345);
+            this.statusComboBox.MaxDropDownItems = 4;
+            this.statusComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(272, 49);
+            this.statusComboBox.StartIndex = 0;
+            this.statusComboBox.TabIndex = 14;
+            this.statusComboBox.UseAccent = false;
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
+            // 
+            // materialButton2
+            // 
+            this.materialButton2.AutoSize = false;
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = false;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(303, 345);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(47, 49);
+            this.materialButton2.TabIndex = 13;
+            this.materialButton2.Text = "add";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.AutoResize = false;
+            this.categoryComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.categoryComboBox.Depth = 0;
+            this.categoryComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.categoryComboBox.DropDownHeight = 174;
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryComboBox.DropDownWidth = 121;
+            this.categoryComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.categoryComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Hint = "Category";
+            this.categoryComboBox.IntegralHeight = false;
+            this.categoryComboBox.ItemHeight = 43;
+            this.categoryComboBox.Location = new System.Drawing.Point(28, 283);
+            this.categoryComboBox.MaxDropDownItems = 4;
+            this.categoryComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(272, 49);
+            this.categoryComboBox.StartIndex = 0;
+            this.categoryComboBox.TabIndex = 12;
+            this.categoryComboBox.UseAccent = false;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.materialComboBox1_SelectedIndexChanged);
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton1.HighEmphasis = false;
+            this.materialButton1.Icon = null;
+            this.materialButton1.ImageKey = "(none)";
+            this.materialButton1.Location = new System.Drawing.Point(303, 284);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(47, 49);
+            this.materialButton1.TabIndex = 11;
+            this.materialButton1.Text = "add";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
             // clearBtn
             // 
             this.clearBtn.AutoSize = false;
@@ -132,12 +324,12 @@
             this.clearBtn.Depth = 0;
             this.clearBtn.HighEmphasis = false;
             this.clearBtn.Icon = null;
-            this.clearBtn.Location = new System.Drawing.Point(200, 580);
+            this.clearBtn.Location = new System.Drawing.Point(200, 600);
             this.clearBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.clearBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.clearBtn.Size = new System.Drawing.Size(151, 60);
+            this.clearBtn.Size = new System.Drawing.Size(151, 48);
             this.clearBtn.TabIndex = 10;
             this.clearBtn.Text = "Clear feilds";
             this.clearBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
@@ -153,14 +345,14 @@
             this.deleteBtn.Depth = 0;
             this.deleteBtn.HighEmphasis = false;
             this.deleteBtn.Icon = null;
-            this.deleteBtn.Location = new System.Drawing.Point(29, 580);
+            this.deleteBtn.Location = new System.Drawing.Point(29, 600);
             this.deleteBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.deleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.deleteBtn.Size = new System.Drawing.Size(151, 60);
+            this.deleteBtn.Size = new System.Drawing.Size(151, 48);
             this.deleteBtn.TabIndex = 9;
-            this.deleteBtn.Text = "Delete account";
+            this.deleteBtn.Text = "Delete asset";
             this.deleteBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.deleteBtn.UseAccentColor = false;
             this.deleteBtn.UseVisualStyleBackColor = true;
@@ -174,14 +366,14 @@
             this.editBtn.Depth = 0;
             this.editBtn.HighEmphasis = false;
             this.editBtn.Icon = null;
-            this.editBtn.Location = new System.Drawing.Point(200, 508);
+            this.editBtn.Location = new System.Drawing.Point(200, 539);
             this.editBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.editBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.editBtn.Name = "editBtn";
             this.editBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.editBtn.Size = new System.Drawing.Size(151, 60);
+            this.editBtn.Size = new System.Drawing.Size(151, 49);
             this.editBtn.TabIndex = 8;
-            this.editBtn.Text = "Edit account";
+            this.editBtn.Text = "Edit asset";
             this.editBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.editBtn.UseAccentColor = false;
             this.editBtn.UseVisualStyleBackColor = true;
@@ -195,108 +387,49 @@
             this.addBtn.Depth = 0;
             this.addBtn.HighEmphasis = false;
             this.addBtn.Icon = null;
-            this.addBtn.Location = new System.Drawing.Point(29, 508);
+            this.addBtn.Location = new System.Drawing.Point(28, 539);
             this.addBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.addBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.addBtn.Name = "addBtn";
             this.addBtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.addBtn.Size = new System.Drawing.Size(151, 60);
+            this.addBtn.Size = new System.Drawing.Size(151, 49);
             this.addBtn.TabIndex = 7;
-            this.addBtn.Text = "Add account";
+            this.addBtn.Text = "Add Asset";
             this.addBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.addBtn.UseAccentColor = false;
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // roleFeild
+            // locationFeild
             // 
-            this.roleFeild.AnimateReadOnly = false;
-            this.roleFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.roleFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.roleFeild.Depth = 0;
-            this.roleFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.roleFeild.HideSelection = true;
-            this.roleFeild.Hint = "Role";
-            this.roleFeild.LeadingIcon = null;
-            this.roleFeild.Location = new System.Drawing.Point(29, 396);
-            this.roleFeild.MaxLength = 32767;
-            this.roleFeild.MouseState = MaterialSkin.MouseState.OUT;
-            this.roleFeild.Name = "roleFeild";
-            this.roleFeild.PasswordChar = '\0';
-            this.roleFeild.PrefixSuffixText = null;
-            this.roleFeild.ReadOnly = false;
-            this.roleFeild.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.roleFeild.SelectedText = "";
-            this.roleFeild.SelectionLength = 0;
-            this.roleFeild.SelectionStart = 0;
-            this.roleFeild.ShortcutsEnabled = true;
-            this.roleFeild.Size = new System.Drawing.Size(322, 48);
-            this.roleFeild.TabIndex = 6;
-            this.roleFeild.TabStop = false;
-            this.roleFeild.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.roleFeild.TrailingIcon = null;
-            this.roleFeild.UseAccent = false;
-            this.roleFeild.UseSystemPasswordChar = false;
-            // 
-            // passwordFeild
-            // 
-            this.passwordFeild.AnimateReadOnly = false;
-            this.passwordFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.passwordFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.passwordFeild.Depth = 0;
-            this.passwordFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.passwordFeild.HideSelection = true;
-            this.passwordFeild.Hint = "Password";
-            this.passwordFeild.LeadingIcon = null;
-            this.passwordFeild.Location = new System.Drawing.Point(29, 316);
-            this.passwordFeild.MaxLength = 32767;
-            this.passwordFeild.MouseState = MaterialSkin.MouseState.OUT;
-            this.passwordFeild.Name = "passwordFeild";
-            this.passwordFeild.PasswordChar = '*';
-            this.passwordFeild.PrefixSuffixText = null;
-            this.passwordFeild.ReadOnly = false;
-            this.passwordFeild.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.passwordFeild.SelectedText = "";
-            this.passwordFeild.SelectionLength = 0;
-            this.passwordFeild.SelectionStart = 0;
-            this.passwordFeild.ShortcutsEnabled = true;
-            this.passwordFeild.Size = new System.Drawing.Size(322, 48);
-            this.passwordFeild.TabIndex = 5;
-            this.passwordFeild.TabStop = false;
-            this.passwordFeild.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.passwordFeild.TrailingIcon = null;
-            this.passwordFeild.UseAccent = false;
-            this.passwordFeild.UseSystemPasswordChar = false;
-            // 
-            // usernameFeild
-            // 
-            this.usernameFeild.AnimateReadOnly = false;
-            this.usernameFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.usernameFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.usernameFeild.Depth = 0;
-            this.usernameFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.usernameFeild.HideSelection = true;
-            this.usernameFeild.Hint = "Username";
-            this.usernameFeild.LeadingIcon = null;
-            this.usernameFeild.Location = new System.Drawing.Point(29, 236);
-            this.usernameFeild.MaxLength = 32767;
-            this.usernameFeild.MouseState = MaterialSkin.MouseState.OUT;
-            this.usernameFeild.Name = "usernameFeild";
-            this.usernameFeild.PasswordChar = '\0';
-            this.usernameFeild.PrefixSuffixText = null;
-            this.usernameFeild.ReadOnly = false;
-            this.usernameFeild.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.usernameFeild.SelectedText = "";
-            this.usernameFeild.SelectionLength = 0;
-            this.usernameFeild.SelectionStart = 0;
-            this.usernameFeild.ShortcutsEnabled = true;
-            this.usernameFeild.Size = new System.Drawing.Size(322, 48);
-            this.usernameFeild.TabIndex = 4;
-            this.usernameFeild.TabStop = false;
-            this.usernameFeild.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.usernameFeild.TrailingIcon = null;
-            this.usernameFeild.UseAccent = false;
-            this.usernameFeild.UseSystemPasswordChar = false;
+            this.locationFeild.AnimateReadOnly = false;
+            this.locationFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.locationFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.locationFeild.Depth = 0;
+            this.locationFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.locationFeild.HideSelection = true;
+            this.locationFeild.Hint = "Located at";
+            this.locationFeild.LeadingIcon = null;
+            this.locationFeild.Location = new System.Drawing.Point(29, 212);
+            this.locationFeild.MaxLength = 32767;
+            this.locationFeild.MouseState = MaterialSkin.MouseState.OUT;
+            this.locationFeild.Name = "locationFeild";
+            this.locationFeild.PasswordChar = '\0';
+            this.locationFeild.PrefixSuffixText = null;
+            this.locationFeild.ReadOnly = false;
+            this.locationFeild.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.locationFeild.SelectedText = "";
+            this.locationFeild.SelectionLength = 0;
+            this.locationFeild.SelectionStart = 0;
+            this.locationFeild.ShortcutsEnabled = true;
+            this.locationFeild.Size = new System.Drawing.Size(322, 48);
+            this.locationFeild.TabIndex = 6;
+            this.locationFeild.TabStop = false;
+            this.locationFeild.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.locationFeild.TrailingIcon = null;
+            this.locationFeild.UseAccent = false;
+            this.locationFeild.UseSystemPasswordChar = false;
+            this.locationFeild.Click += new System.EventHandler(this.locationFeild_Click);
             // 
             // nameFeild
             // 
@@ -306,9 +439,9 @@
             this.nameFeild.Depth = 0;
             this.nameFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameFeild.HideSelection = true;
-            this.nameFeild.Hint = "Fullname";
+            this.nameFeild.Hint = "Asset name";
             this.nameFeild.LeadingIcon = null;
-            this.nameFeild.Location = new System.Drawing.Point(29, 156);
+            this.nameFeild.Location = new System.Drawing.Point(29, 147);
             this.nameFeild.MaxLength = 32767;
             this.nameFeild.MouseState = MaterialSkin.MouseState.OUT;
             this.nameFeild.Name = "nameFeild";
@@ -327,6 +460,7 @@
             this.nameFeild.TrailingIcon = null;
             this.nameFeild.UseAccent = false;
             this.nameFeild.UseSystemPasswordChar = false;
+            this.nameFeild.Click += new System.EventHandler(this.nameFeild_Click);
             // 
             // idFeild
             // 
@@ -334,11 +468,12 @@
             this.idFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.idFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.idFeild.Depth = 0;
+            this.idFeild.Enabled = false;
             this.idFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.idFeild.HideSelection = true;
             this.idFeild.Hint = "ID";
             this.idFeild.LeadingIcon = null;
-            this.idFeild.Location = new System.Drawing.Point(29, 76);
+            this.idFeild.Location = new System.Drawing.Point(29, 82);
             this.idFeild.MaxLength = 32767;
             this.idFeild.MouseState = MaterialSkin.MouseState.OUT;
             this.idFeild.Name = "idFeild";
@@ -357,19 +492,7 @@
             this.idFeild.TrailingIcon = null;
             this.idFeild.UseAccent = false;
             this.idFeild.UseSystemPasswordChar = false;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(141, 32);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(98, 29);
-            this.materialLabel1.TabIndex = 1;
-            this.materialLabel1.Text = "User Info";
+            this.idFeild.Click += new System.EventHandler(this.idFeild_Click);
             // 
             // assets
             // 
@@ -377,7 +500,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1289, 681);
             this.Controls.Add(this.materialCard1);
-            this.Controls.Add(this.materialListView1);
+            this.Controls.Add(this.assetListView);
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.StatusAndActionBar_None;
             this.Name = "assets";
             this.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -390,7 +513,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private MaterialSkin.Controls.MaterialListView assetListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -401,11 +524,17 @@
         private MaterialSkin.Controls.MaterialButton deleteBtn;
         private MaterialSkin.Controls.MaterialButton editBtn;
         private MaterialSkin.Controls.MaterialButton addBtn;
-        private MaterialSkin.Controls.MaterialTextBox2 roleFeild;
-        private MaterialSkin.Controls.MaterialTextBox2 passwordFeild;
-        private MaterialSkin.Controls.MaterialTextBox2 usernameFeild;
+        private MaterialSkin.Controls.MaterialTextBox2 locationFeild;
         private MaterialSkin.Controls.MaterialTextBox2 nameFeild;
         private MaterialSkin.Controls.MaterialTextBox2 idFeild;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialComboBox conditionComboBox;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialComboBox statusComboBox;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialComboBox categoryComboBox;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
