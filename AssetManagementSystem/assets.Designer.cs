@@ -36,7 +36,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.searchFeild = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.conditionComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
@@ -117,7 +117,7 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialLabel1);
+            this.materialCard1.Controls.Add(this.searchFeild);
             this.materialCard1.Controls.Add(this.materialButton4);
             this.materialCard1.Controls.Add(this.conditionComboBox);
             this.materialCard1.Controls.Add(this.materialButton3);
@@ -142,18 +142,35 @@
             this.materialCard1.Size = new System.Drawing.Size(380, 687);
             this.materialCard1.TabIndex = 3;
             // 
-            // materialLabel1
+            // searchFeild
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel1.Location = new System.Drawing.Point(110, 30);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(161, 24);
-            this.materialLabel1.TabIndex = 18;
-            this.materialLabel1.Text = "Asset Infotmation";
+            this.searchFeild.AnimateReadOnly = false;
+            this.searchFeild.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.searchFeild.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.searchFeild.Depth = 0;
+            this.searchFeild.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.searchFeild.HideSelection = true;
+            this.searchFeild.Hint = "Search";
+            this.searchFeild.LeadingIcon = global::AssetManagementSystem.Properties.Resources.search;
+            this.searchFeild.Location = new System.Drawing.Point(27, 17);
+            this.searchFeild.MaxLength = 32767;
+            this.searchFeild.MouseState = MaterialSkin.MouseState.OUT;
+            this.searchFeild.Name = "searchFeild";
+            this.searchFeild.PasswordChar = '\0';
+            this.searchFeild.PrefixSuffixText = null;
+            this.searchFeild.ReadOnly = false;
+            this.searchFeild.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.searchFeild.SelectedText = "";
+            this.searchFeild.SelectionLength = 0;
+            this.searchFeild.SelectionStart = 0;
+            this.searchFeild.ShortcutsEnabled = true;
+            this.searchFeild.Size = new System.Drawing.Size(324, 48);
+            this.searchFeild.TabIndex = 18;
+            this.searchFeild.TabStop = false;
+            this.searchFeild.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.searchFeild.TrailingIcon = null;
+            this.searchFeild.UseSystemPasswordChar = false;
+            this.searchFeild.TextChanged += new System.EventHandler(this.materialTextBox21_TextChanged);
             // 
             // materialButton4
             // 
@@ -506,7 +523,6 @@
             this.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.Text = "assets";
             this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -535,6 +551,6 @@
         private MaterialSkin.Controls.MaterialComboBox categoryComboBox;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialTextBox2 searchFeild;
     }
 }

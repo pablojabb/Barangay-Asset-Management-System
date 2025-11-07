@@ -133,10 +133,6 @@ namespace AssetManagementSystem
             {
                 LoadForm(new logs(), tabPage3);
             }
-            if (materialTabControl1.SelectedTab == tabPage4)
-            {
-                LoadForm(new records(), tabPage4);
-            }
             if (materialTabControl1.SelectedTab == tabPage5)
             {
                 LoadForm(new reports(), tabPage5);

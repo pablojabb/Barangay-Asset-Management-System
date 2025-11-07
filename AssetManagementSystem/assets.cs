@@ -7,13 +7,17 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AssetManagementSystem
 {
     public partial class assets : MaterialForm
     {
+        private string searchterm;
+        private CancellationTokenSource debounceToken;
         public assets()
         {
             InitializeComponent();
@@ -24,9 +28,15 @@ namespace AssetManagementSystem
         private void loadData()
         {
             var db = new dbAccess();
-            string query = "SELECT * FROM assets";
+            string query = "SELECT * FROM assets WHERE asset_name LIKE @searchterm OR id LIKE @searchterm";
+            new SQLiteParameter("@searchterm", "%" + searchterm + "%");
 
-            DataTable dt = db.ExecuteQuery(query);
+            var parameters = new List<SQLiteParameter>
+                      {
+                         new SQLiteParameter("@searchterm", searchterm + "%")
+                      };
+
+            DataTable dt = db.ExecuteQuery(query, parameters.ToArray());
 
             assetListView.Items.Clear();
 
@@ -370,6 +380,27 @@ namespace AssetManagementSystem
             {
                 MessageBox.Show("⚠️ Please select an asset first.", "No Asset Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private async void materialTextBox21_TextChanged(object sender, EventArgs e)
+        {
+
+            debounceToken?.Cancel();
+            debounceToken = new CancellationTokenSource();
+            var token = debounceToken.Token;
+            
+
+            try
+            {
+                await Task.Delay(400, token);
+                if (!token.IsCancellationRequested)
+                {
+                    searchterm = searchFeild.Text.Trim();
+                    loadData();
+                }
+            }
+            catch (TaskCanceledException) { }
+
         }
     }
 }
