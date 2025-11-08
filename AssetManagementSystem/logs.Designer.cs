@@ -45,12 +45,12 @@
             this.materialExpansionPanel1 = new MaterialSkin.Controls.MaterialExpansionPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.statusComboBox = new MaterialSkin.Controls.MaterialComboBox();
+            this.conditionComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.statusComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.conditionComboBox = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
@@ -398,6 +398,54 @@
             this.materialCard4.Size = new System.Drawing.Size(323, 311);
             this.materialCard4.TabIndex = 28;
             // 
+            // statusComboBox
+            // 
+            this.statusComboBox.AutoResize = false;
+            this.statusComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.statusComboBox.Depth = 0;
+            this.statusComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.statusComboBox.DropDownHeight = 174;
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.DropDownWidth = 121;
+            this.statusComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.statusComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Hint = "Status";
+            this.statusComboBox.IntegralHeight = false;
+            this.statusComboBox.ItemHeight = 43;
+            this.statusComboBox.Location = new System.Drawing.Point(30, 11);
+            this.statusComboBox.MaxDropDownItems = 4;
+            this.statusComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(272, 49);
+            this.statusComboBox.StartIndex = 0;
+            this.statusComboBox.TabIndex = 21;
+            this.statusComboBox.UseAccent = false;
+            // 
+            // conditionComboBox
+            // 
+            this.conditionComboBox.AutoResize = false;
+            this.conditionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.conditionComboBox.Depth = 0;
+            this.conditionComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.conditionComboBox.DropDownHeight = 174;
+            this.conditionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.conditionComboBox.DropDownWidth = 121;
+            this.conditionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.conditionComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.conditionComboBox.FormattingEnabled = true;
+            this.conditionComboBox.Hint = "Condition";
+            this.conditionComboBox.IntegralHeight = false;
+            this.conditionComboBox.ItemHeight = 43;
+            this.conditionComboBox.Location = new System.Drawing.Point(29, 72);
+            this.conditionComboBox.MaxDropDownItems = 4;
+            this.conditionComboBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.conditionComboBox.Name = "conditionComboBox";
+            this.conditionComboBox.Size = new System.Drawing.Size(273, 49);
+            this.conditionComboBox.StartIndex = 0;
+            this.conditionComboBox.TabIndex = 22;
+            this.conditionComboBox.UseAccent = false;
+            // 
             // materialSwitch1
             // 
             this.materialSwitch1.AutoSize = true;
@@ -431,30 +479,6 @@
             this.dateTimePicker1.TabIndex = 23;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // statusComboBox
-            // 
-            this.statusComboBox.AutoResize = false;
-            this.statusComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.statusComboBox.Depth = 0;
-            this.statusComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.statusComboBox.DropDownHeight = 174;
-            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.statusComboBox.DropDownWidth = 121;
-            this.statusComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.statusComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.statusComboBox.FormattingEnabled = true;
-            this.statusComboBox.Hint = "Status";
-            this.statusComboBox.IntegralHeight = false;
-            this.statusComboBox.ItemHeight = 43;
-            this.statusComboBox.Location = new System.Drawing.Point(30, 11);
-            this.statusComboBox.MaxDropDownItems = 4;
-            this.statusComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.statusComboBox.Name = "statusComboBox";
-            this.statusComboBox.Size = new System.Drawing.Size(272, 49);
-            this.statusComboBox.StartIndex = 0;
-            this.statusComboBox.TabIndex = 21;
-            this.statusComboBox.UseAccent = false;
-            // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
@@ -466,30 +490,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(67, 19);
             this.materialLabel2.TabIndex = 26;
             this.materialLabel2.Text = "End date:";
-            // 
-            // conditionComboBox
-            // 
-            this.conditionComboBox.AutoResize = false;
-            this.conditionComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.conditionComboBox.Depth = 0;
-            this.conditionComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.conditionComboBox.DropDownHeight = 174;
-            this.conditionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.conditionComboBox.DropDownWidth = 121;
-            this.conditionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.conditionComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.conditionComboBox.FormattingEnabled = true;
-            this.conditionComboBox.Hint = "Condition";
-            this.conditionComboBox.IntegralHeight = false;
-            this.conditionComboBox.ItemHeight = 43;
-            this.conditionComboBox.Location = new System.Drawing.Point(29, 72);
-            this.conditionComboBox.MaxDropDownItems = 4;
-            this.conditionComboBox.MouseState = MaterialSkin.MouseState.OUT;
-            this.conditionComboBox.Name = "conditionComboBox";
-            this.conditionComboBox.Size = new System.Drawing.Size(273, 49);
-            this.conditionComboBox.StartIndex = 0;
-            this.conditionComboBox.TabIndex = 22;
-            this.conditionComboBox.UseAccent = false;
             // 
             // materialLabel3
             // 

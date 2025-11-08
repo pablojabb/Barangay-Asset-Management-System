@@ -128,7 +128,7 @@
             this.editBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.editBtn.Size = new System.Drawing.Size(182, 60);
             this.editBtn.TabIndex = 8;
-            this.editBtn.Text = "Edit account";
+            this.editBtn.Text = "Update account";
             this.editBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.editBtn.UseAccentColor = false;
             this.editBtn.UseVisualStyleBackColor = true;

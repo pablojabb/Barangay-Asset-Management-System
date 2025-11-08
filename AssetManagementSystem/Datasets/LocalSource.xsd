@@ -9,23 +9,40 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="LocalSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="LocalSource" msprop:Generator_DataSetName="LocalSource">
+  <xs:element name="LocalSource" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="LocalSource" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LocalSource">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="assets" msprop:Generator_RowEvHandlerName="assetsRowChangeEventHandler" msprop:Generator_RowDeletedName="assetsRowDeleted" msprop:Generator_RowDeletingName="assetsRowDeleting" msprop:Generator_RowEvArgName="assetsRowChangeEvent" msprop:Generator_TablePropName="assets" msprop:Generator_RowChangedName="assetsRowChanged" msprop:Generator_RowChangingName="assetsRowChanging" msprop:Generator_TableClassName="assetsDataTable" msprop:Generator_RowClassName="assetsRow" msprop:Generator_TableVarName="tableassets" msprop:Generator_UserTableName="assets">
+        <xs:element name="assets" msprop:Generator_RowEvHandlerName="assetsRowChangeEventHandler" msprop:Generator_RowDeletedName="assetsRowDeleted" msprop:Generator_RowDeletingName="assetsRowDeleting" msprop:Generator_RowEvArgName="assetsRowChangeEvent" msprop:Generator_TablePropName="assets" msprop:Generator_RowChangedName="assetsRowChanged" msprop:Generator_UserTableName="assets" msprop:Generator_RowChangingName="assetsRowChanging" msprop:Generator_RowClassName="assetsRow" msprop:Generator_TableClassName="assetsDataTable" msprop:Generator_TableVarName="tableassets">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
-              <xs:element name="asset_name" msprop:Generator_ColumnPropNameInRow="asset_name" msprop:Generator_ColumnPropNameInTable="asset_nameColumn" msprop:Generator_ColumnVarNameInTable="columnasset_name" msprop:Generator_UserColumnName="asset_name" type="xs:string" minOccurs="0" />
-              <xs:element name="location" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_ColumnVarNameInTable="columnlocation" msprop:Generator_UserColumnName="location" type="xs:string" minOccurs="0" />
-              <xs:element name="category" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_ColumnVarNameInTable="columncategory" msprop:Generator_UserColumnName="category" type="xs:string" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
-              <xs:element name="condition" msprop:Generator_ColumnPropNameInRow="condition" msprop:Generator_ColumnPropNameInTable="conditionColumn" msprop:Generator_ColumnVarNameInTable="columncondition" msprop:Generator_UserColumnName="condition" type="xs:string" minOccurs="0" />
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:string" minOccurs="0" />
+              <xs:element name="asset_name" msprop:Generator_ColumnPropNameInTable="asset_nameColumn" msprop:Generator_ColumnPropNameInRow="asset_name" msprop:Generator_UserColumnName="asset_name" msprop:Generator_ColumnVarNameInTable="columnasset_name" type="xs:string" minOccurs="0" />
+              <xs:element name="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_UserColumnName="location" msprop:Generator_ColumnVarNameInTable="columnlocation" type="xs:string" minOccurs="0" />
+              <xs:element name="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_UserColumnName="category" msprop:Generator_ColumnVarNameInTable="columncategory" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnVarNameInTable="columnstatus" type="xs:string" minOccurs="0" />
+              <xs:element name="condition" msprop:Generator_ColumnPropNameInTable="conditionColumn" msprop:Generator_ColumnPropNameInRow="condition" msprop:Generator_UserColumnName="condition" msprop:Generator_ColumnVarNameInTable="columncondition" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable2" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_RowClassName="DataTable2Row" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_UserTableName="DataTable2">
+        <xs:element name="logs" msprop:Generator_RowEvHandlerName="logsRowChangeEventHandler" msprop:Generator_RowDeletedName="logsRowDeleted" msprop:Generator_RowDeletingName="logsRowDeleting" msprop:Generator_RowEvArgName="logsRowChangeEvent" msprop:Generator_TablePropName="logs" msprop:Generator_RowChangedName="logsRowChanged" msprop:Generator_UserTableName="logs" msprop:Generator_RowChangingName="logsRowChanging" msprop:Generator_RowClassName="logsRow" msprop:Generator_TableClassName="logsDataTable" msprop:Generator_TableVarName="tablelogs">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="log_id" msprop:Generator_ColumnPropNameInTable="log_idColumn" msprop:Generator_ColumnPropNameInRow="log_id" msprop:Generator_UserColumnName="log_id" msprop:Generator_ColumnVarNameInTable="columnlog_id" type="xs:string" minOccurs="0" />
+              <xs:element name="asset_name" msprop:Generator_ColumnPropNameInTable="asset_nameColumn" msprop:Generator_ColumnPropNameInRow="asset_name" msprop:Generator_UserColumnName="asset_name" msprop:Generator_ColumnVarNameInTable="columnasset_name" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnVarNameInTable="columnstatus" type="xs:string" minOccurs="0" />
+              <xs:element name="condition" msprop:Generator_ColumnPropNameInTable="conditionColumn" msprop:Generator_ColumnPropNameInRow="condition" msprop:Generator_UserColumnName="condition" msprop:Generator_ColumnVarNameInTable="columncondition" type="xs:string" minOccurs="0" />
+              <xs:element name="assigned_to" msprop:Generator_ColumnPropNameInTable="assigned_toColumn" msprop:Generator_ColumnPropNameInRow="assigned_to" msprop:Generator_UserColumnName="assigned_to" msprop:Generator_ColumnVarNameInTable="columnassigned_to" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_UserColumnName="date" msprop:Generator_ColumnVarNameInTable="columndate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="brgyInfo" msprop:Generator_RowEvHandlerName="brgyInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="brgyInfoRowDeleted" msprop:Generator_RowDeletingName="brgyInfoRowDeleting" msprop:Generator_RowEvArgName="brgyInfoRowChangeEvent" msprop:Generator_TablePropName="brgyInfo" msprop:Generator_RowChangedName="brgyInfoRowChanged" msprop:Generator_RowChangingName="brgyInfoRowChanging" msprop:Generator_TableClassName="brgyInfoDataTable" msprop:Generator_RowClassName="brgyInfoRow" msprop:Generator_TableVarName="tablebrgyInfo" msprop:Generator_UserTableName="brgyInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="logo" msprop:Generator_ColumnPropNameInRow="logo" msprop:Generator_ColumnPropNameInTable="logoColumn" msprop:Generator_ColumnVarNameInTable="columnlogo" msprop:Generator_UserColumnName="logo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name" type="xs:string" minOccurs="0" />
+              <xs:element name="city" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_UserColumnName="city" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

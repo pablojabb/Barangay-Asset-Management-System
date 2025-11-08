@@ -49,6 +49,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "reportViewer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report viewer";
             this.Load += new System.EventHandler(this.reportViewer_Load);
             this.ResumeLayout(false);

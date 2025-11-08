@@ -15,6 +15,16 @@ namespace AssetManagementSystem
     public partial class Form1 : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
+
+        public TabPage TabPage1 => tabPage1;
+        public TabPage TabPage2 => tabPage2;
+        public TabPage TabPage3 => tabPage3;
+        public TabPage TabPage5 => tabPage5;
+        public TabPage TabPage6 => tabPage6;
+        public TabPage TabPage8 => tabPage8;
+        public MaterialSkin.Controls.MaterialTabControl MainTabControl => materialTabControl1;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -75,6 +85,7 @@ namespace AssetManagementSystem
 
         public void LoadForm(Form form, TabPage tabPage)
         {
+            
             tabPage.Controls.Clear();
 
             form.TopLevel = false;

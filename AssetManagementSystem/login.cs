@@ -1,6 +1,9 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AssetManagementSystem
@@ -26,7 +29,9 @@ namespace AssetManagementSystem
             );
 
             var db = new dbAccess();
-            
+            loadData();
+
+
 
         }
 
@@ -72,6 +77,44 @@ namespace AssetManagementSystem
             }
         }
 
+        public void loadData()
+        {
+            try
+            {
+                var db = new dbAccess();
+                string query = "SELECT rowid, logo, name, city, is_dark_mode FROM system_info LIMIT 1";
+                DataTable dt = db.ExecuteQuery(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    DataRow row = dt.Rows[0];
+
+
+                    materialLabel1.Text = row["name"].ToString() + " Asset Management System";
+                    
+                    
+                    if (row["logo"] != DBNull.Value)
+                    {
+                        byte[] logoBytes = (byte[])row["logo"];
+                        using (var ms = new MemoryStream(logoBytes))
+                        {
+                            pictureBox1.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("❌ Failed to load system info.\n\n" + ex.Message,
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
@@ -80,6 +123,16 @@ namespace AssetManagementSystem
         }
 
         private void passwordTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void passwordTextbox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernameTextbox_Click(object sender, EventArgs e)
         {
 
         }

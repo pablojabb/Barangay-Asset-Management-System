@@ -143,7 +143,7 @@ namespace AssetManagementSystem
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                ofd.Filter = "Image Files|*.png";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     // Save file path only to the textbox (not to DB)

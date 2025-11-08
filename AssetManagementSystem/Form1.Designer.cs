@@ -70,7 +70,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1319, 767);
+            this.materialTabControl1.Size = new System.Drawing.Size(1363, 869);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             this.materialTabControl1.Click += new System.EventHandler(this.materialTabControl1_Click);
@@ -81,7 +81,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage1.Size = new System.Drawing.Size(1355, 834);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dashboard";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage2.Size = new System.Drawing.Size(1333, 783);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Assets";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage3.Size = new System.Drawing.Size(1333, 783);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Logs";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage5.Size = new System.Drawing.Size(1333, 783);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Reports";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.tabPage6.ImageKey = "accs.png";
             this.tabPage6.Location = new System.Drawing.Point(4, 31);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage6.Size = new System.Drawing.Size(1333, 783);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Accounts";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 31);
             this.tabPage8.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1311, 732);
+            this.tabPage8.Size = new System.Drawing.Size(1333, 783);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Settings";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -146,9 +146,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1319, 839);
+            this.ClientSize = new System.Drawing.Size(1363, 941);
             this.Controls.Add(this.materialTabControl1);
-            this.DrawerAutoShow = true;
             this.DrawerIndicatorWidth = 5;
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;

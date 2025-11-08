@@ -10,13 +10,15 @@ namespace AssetManagementSystem
     public partial class reportViewer : MaterialForm
     {
         private readonly string query;
+        private readonly string type;
         private readonly SQLiteParameter[] parameters; // ✅ store parameters
 
-        public reportViewer(string query, SQLiteParameter[] parameters = null)
+        public reportViewer(string query, string type, SQLiteParameter[] parameters = null)
         {
             InitializeComponent();
-            this.query = query ?? ""; // ✅ Prevent null query
-            this.parameters = parameters; // ✅ Store parameters
+            this.query = query ?? ""; 
+            this.parameters = parameters;
+            this.type = type;
         }
 
         private void reportViewer_Load(object sender, EventArgs e)
@@ -25,27 +27,38 @@ namespace AssetManagementSystem
             {
                 if (string.IsNullOrWhiteSpace(query))
                 {
-                    MessageBox.Show("⚠ No query specified for report.", "Warning",
+                    MessageBox.Show("No query specified for report.", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 var db = new dbAccess();
+
                 // ✅ Execute query with parameters if provided
                 DataTable dt = db.ExecuteQuery(query, parameters);
+                DataTable dt2 = db.ExecuteQuery("SELECT * FROM system_info");
 
                 if (dt == null || dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("⚠ No data returned for this report.", "Info",
+                    MessageBox.Show("No data returned for this report.", "Info",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 reportViewer1.ProcessingMode = ProcessingMode.Local;
-                reportViewer1.LocalReport.ReportPath = @"Reports\AssetList.rdlc";
                 reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(
-                    new ReportDataSource("assets", dt)
-                );
+
+                if (type == "assets")
+                {
+                    reportViewer1.LocalReport.ReportPath = @"Reports\AssetList.rdlc";
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("assets", dt));
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("brgyInfo", dt2));
+                }
+                else if (type == "asset_logs")
+                {
+                    reportViewer1.LocalReport.ReportPath = @"Reports\logs.rdlc";
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("logs", dt));
+                    reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("brgyInfo", dt2));
+                }
 
                 reportViewer1.RefreshReport();
             }
@@ -55,5 +68,6 @@ namespace AssetManagementSystem
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

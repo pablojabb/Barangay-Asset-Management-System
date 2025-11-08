@@ -15,7 +15,6 @@ namespace AssetManagementSystem
     {
         private string searchTerm;
         private string assetSearchTerm;
-        private string category;
         private string status;
         private string condition;
         private string startDate;
@@ -432,6 +431,7 @@ namespace AssetManagementSystem
             // ✅ Reset DateTimePicker to current date and time
             
             dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
 
             // ✅ Reset filters
             condition = null;

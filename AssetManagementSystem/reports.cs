@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +25,9 @@ namespace AssetManagementSystem
         private string category;
         private string status;
         private string condition;
-        private DataTable dt;
+        private string startDate;
+        private string endDate;
+        private string type;
         private CancellationTokenSource debounceToken;
         public reports()
         {
@@ -36,7 +39,7 @@ namespace AssetManagementSystem
         public void loadData()
         {
             string typeFilter = materialComboBox1.SelectedItem?.ToString();
-            string type = "";
+             type = "";
             var db = new dbAccess();
             DataTable dt = null;
 
@@ -67,16 +70,37 @@ namespace AssetManagementSystem
 
 
                 case "Asset Log":
-                    type = "asset_log";
-                    query = $"SELECT * FROM {type}";
-                    dt = db.ExecuteQuery(query);
+                    type = "asset_logs";
+                     query = $"SELECT * FROM {type} " +
+                              "WHERE asset_name LIKE @searchTerm ";
+
+                    // ✅ Dynamic filters
+                    if (!string.IsNullOrEmpty(status) && status != "All")
+                        query += "AND status LIKE @status ";
+                    if (!string.IsNullOrEmpty(condition) && condition != "All")
+                        query += "AND condition LIKE @condition ";
+                    if (!string.IsNullOrEmpty(startDate) && !string.IsNullOrEmpty(endDate))
+                        query += "AND date BETWEEN @startDate AND @endDate ";
+
+                    // ✅ Parameters
+                     parameters = new List<SQLiteParameter>
+                    {
+                       new SQLiteParameter("@searchTerm", $"{searchTerm}%")
+                      };
+
+                    if (!string.IsNullOrEmpty(status) && status != "All")
+                        parameters.Add(new SQLiteParameter("@status", $"{status}%"));
+                    if (!string.IsNullOrEmpty(condition) && condition != "All")
+                        parameters.Add(new SQLiteParameter("@condition", $"{condition}%"));
+                    if (!string.IsNullOrEmpty(startDate) && !string.IsNullOrEmpty(endDate))
+                    {
+                        parameters.Add(new SQLiteParameter("@startDate", startDate));
+                        parameters.Add(new SQLiteParameter("@endDate", endDate));
+                    }
+
+                    dt = db.ExecuteQuery(query, parameters.ToArray());
                     break;
 
-                case "Maintenance Log":
-                    type = "maintenance";
-                    query = $"SELECT * FROM {type}";
-                    dt = db.ExecuteQuery(query);
-                    break;
 
                 default:
                     query = "SELECT * FROM assets";
@@ -134,7 +158,7 @@ namespace AssetManagementSystem
                     parameters.Add(new SQLiteParameter("@condition", condition + "%"));
 
                 // Pass both query and parameters
-                var RV = new reportViewer(query, parameters.ToArray());
+                var RV = new reportViewer(query, type,parameters.ToArray());
                 RV.ShowDialog();
             }
 
@@ -145,7 +169,7 @@ namespace AssetManagementSystem
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
         public void toggleDateFilter(bool status)
@@ -154,9 +178,13 @@ namespace AssetManagementSystem
             {
                 dateTimePicker1.Enabled = true;
                 dateTimePicker2.Enabled = true;
+                dateTimePicker1.Value = DateTime.Now;
+                dateTimePicker2.Value = DateTime.Now;
             }
             else
             {
+                dateTimePicker1.Value = DateTime.Now;
+                dateTimePicker2.Value = DateTime.Now;
                 dateTimePicker1.Enabled = false;
                 dateTimePicker2.Enabled = false;
             }
@@ -245,8 +273,13 @@ namespace AssetManagementSystem
 
         private void materialExpansionPanel1_CancelClick(object sender, EventArgs e)
         {
-            //reset date filter
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
 
+            startDate = null;
+            endDate = null;
+            loadData();
+            toggleDateFilter(false);
         }
 
 
@@ -299,6 +332,17 @@ namespace AssetManagementSystem
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialExpansionPanel1_SaveClick(object sender, EventArgs e)
+        {
+            if (materialSwitch1.Checked)
+            {
+                startDate = dateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss");
+
+                endDate = dateTimePicker2.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+            loadData();
         }
     }
 }

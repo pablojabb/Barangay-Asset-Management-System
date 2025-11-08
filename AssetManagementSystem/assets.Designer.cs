@@ -390,7 +390,7 @@
             this.editBtn.NoAccentTextColor = System.Drawing.Color.Empty;
             this.editBtn.Size = new System.Drawing.Size(151, 49);
             this.editBtn.TabIndex = 8;
-            this.editBtn.Text = "Edit asset";
+            this.editBtn.Text = "Update asset";
             this.editBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.editBtn.UseAccentColor = false;
             this.editBtn.UseVisualStyleBackColor = true;
